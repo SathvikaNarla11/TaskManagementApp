@@ -18,7 +18,7 @@ body {
 	max-width: 600px;
 	display: block;
 	margin: 0 auto 40px;
-	background-color: #e75874;
+	background-color: #2d244d;
 	padding: 30px;
 	border-radius: 5px;
 	-webkit-box-shadow: 0 2px 10px 0 #074b83;
@@ -37,8 +37,8 @@ body {
   
   .create_new_todo {
 	text-align: center;
-	border-bottom: #151113 solid 1px;
-	border-top: #151113 solid 1px;
+	border-bottom: #d0d0d0 solid 1px;
+	border-top: #d0d0d0 solid 1px;
 	border-radius: 8px;
 	padding: 8px 0;
   }
@@ -62,11 +62,11 @@ body {
   .todos li {
 	list-style-type: none;
 	margin-bottom: 5px;
-	border: 1px solid #080202;
+	border: 1px solid #e8e8e8;
 	padding: 5px;
   }
   .todos li:not(:last-child) {
-	border: 1px solid #080202; 
+	border: 1px solid #e7e7e7; 
 	padding: 5px;
 	
   }
@@ -81,7 +81,7 @@ body {
   
   .todos fieldset {
 	align-items: center;
-	background-color: #be1558;
+	background-color: #4cb69f;
 	border: #be1558;
 	border-radius: 2px;
 	
@@ -106,13 +106,13 @@ body {
 	border-radius: 3px;
 	border: none;
  }
- 
+
 .name,.message{
 	border-radius: 2px;
 	border: none;
 	margin: 4px;
-	border-bottom: #151113 solid 1px;
-	border-top: #151113 solid 1px;
+	border-bottom: #eeedee solid 1px;
+	border-top: #eeedee solid 1px;
 	border-radius: 8px;
 
 }
