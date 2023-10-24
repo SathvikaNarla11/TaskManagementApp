@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 300px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        form {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        input {
+            width: 92%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <form id="signupForm">
+            <h1>Sign Up</h1>
+            <label for="newUsername">Username:</label>
+            <input type="text" id="newUsername" name="newUsername" required>
+            <label for="newPassword">Password:</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+            <button type="button" onclick="signUp()">Sign Up</button>
+        </form>
+
+        
+        <form id="signInForm" class="hidden">
+            <h1>Sign In</h1>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="button" onclick="signIn()">Sign In</button>
+        </form>
+    </div>
+
+    <script>
+        let users = [];
+        const signUpForm = document.getElementById("signupForm");
+        const signInForm = document.getElementById("signInForm");
+
+        function signUp() {
+            const newUsername = document.getElementById("newUsername").value;
+            const newPassword = document.getElementById("newPassword").value;
+
+            const isUsernameTaken = users.some(user => user.username === newUsername);
+
+            if (isUsernameTaken) {
+                alert("Username is already taken. Please choose a different username.");
+            } else {
+                users.push({ username: newUsername, password: newPassword });
+                alert("Sign-up successful! You can now sign in with your new account.");
+                signUpForm.classList.add("hidden");
+                signInForm.classList.remove("hidden");
+            }
+        }
+
+        function signIn() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const user = users.find(user => user.username === username && user.password === password);
+
+            if (user) {
+                window.location.href = "https://task-management-app-aj3y.onrender.com/";
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
